@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+<h1>LOGIN PAGE</h1>
+<hr/>
+<a href="/login">LOGIN</a> | <a href="/">HOME</a>
+<form action="/login" method="post">
+  <div class="imgcontainer">
+    <img src="{{ url_for("static", filename="img_avatar2.png") }}" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pwd" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  </form>
+    <div class="msg">
+        {{ msg }}
+    </div>
+</body>
+</html>
